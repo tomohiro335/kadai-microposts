@@ -3,7 +3,7 @@
 <div class="alert alert-warning">
   <ul>
     
-    <% model.error.full_messages.each do |message| %>
+    <% model.errors.full_messages.each do |message| %>
       
       <li>
         <%= message %>
