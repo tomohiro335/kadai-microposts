@@ -21,4 +21,5 @@ Rails.application.routes.draw do
   
  resources :relationships, only: [:create, :destroy]
  resources :microposts, only: [:create, :destroy]
+ resources :favs, only: [:create, :destroy]
 end

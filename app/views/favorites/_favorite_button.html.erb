@@ -1,0 +1,31 @@
+<% if current_user.favoriting?(micropost) %>
+
+    
+<%= form_for(current_user.favs.find_by(micropost_id: micropost.id), html: { method: :delete }) do |f| %>
+
+      
+<%= hidden_field_tag :micropost_id, micropost.id %>
+
+      
+<%= f.submit 'お気に入り解除', class: 'btn btn-danger btn-xs' %>
+
+    
+<% end %>
+
+  
+<% else %>
+
+    
+<%= form_for(current_user.favs.build) do |f| %>
+
+      
+<%= hidden_field_tag :micropost_id, micropost.id %>
+
+      
+<%= f.submit 'お気に入り登録', class: 'btn btn-primary btn-xs' %>
+
+    
+<% end %>
+
+  
+<% end %>

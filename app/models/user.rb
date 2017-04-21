@@ -42,13 +42,13 @@ class User < ApplicationRecord
   end
   
   # アンファボ
-  def unfavorite(other_user)
+  def unfavorite(target_micropost)
     fav = self.favs.find_by(micropost_id: target_micropost.id)
     fav.destroy if fav
   end
   
   # ファボってる？
   def favoriting?(target_micropost)
-    self.favs.include?(target_micropost)
+    self.favoritings.include?(target_micropost)
   end
 end
