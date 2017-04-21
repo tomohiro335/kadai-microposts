@@ -55,7 +55,8 @@ Favorites
 
     </ul>
     
-<%= render 'users', users: @followers %>
+<%#= render 'users', users: @users %>
+<%= render 'microposts/microposts', microposts: @microposts, users: @users %>
 
   </div>
 </div>

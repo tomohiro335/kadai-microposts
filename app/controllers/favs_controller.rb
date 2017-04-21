@@ -5,7 +5,7 @@ class FavsController < ApplicationController
     target_micropost = Micropost.find(params[:micropost_id])
     current_user.favorite(target_micropost)
     flash[:success] = '対象のマイクロポストをお気に入り登録しました。'
-redirect_back(fallback_location: root_path)
+    redirect_back(fallback_location: root_path)
   end
 
   def destroy

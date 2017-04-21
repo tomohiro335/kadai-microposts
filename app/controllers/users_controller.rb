@@ -38,6 +38,19 @@ class UsersController < ApplicationController
     @followers = @user.followers.page(params[:page])
     counts(@user)
   end
+
+#  def favorites
+#    @user = User.find(params[:id])
+#    @favorites = @user.feed_favorites.page(params[:page])
+#  end
+ 
+  def favorites
+    @user = User.find(params[:id])
+    @microposts= @user.feed_favorites.order('created_at DESC').page(params[:page])
+    counts(@user)
+  end
+  # このあとfavorites.html.erbが読み込まれてる
+  # @userと@micropostsが使える
   
 private
 
